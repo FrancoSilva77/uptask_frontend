@@ -6,6 +6,7 @@ import OlvidePassword from "./pages/OlvidePassword"
 import NuevoPassword from "./pages/NuevoPassword"
 import ConfirmarCuenta from "./pages/ConfirmarCuenta"
 import Proyectos from "./pages/Proyectos"
+import Proyecto from "./pages/Proyecto"
 import NuevoProyecto from "./pages/NuevoProyecto"
 import RutaProtegida from "./layouts/RutaProtegida"
 
@@ -30,6 +31,7 @@ function App() {
             <Route path="/proyectos" element={<RutaProtegida />}>
               <Route index element={<Proyectos />} />
               <Route path="crear-proyecto" element={<NuevoProyecto />} />
+              <Route path=":id" element={<Proyecto />} />
             </Route>
           </Routes>
         </ProyectosProvider>
