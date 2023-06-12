@@ -10,9 +10,8 @@ export const Login = () => {
   const [alerta, setAlerta] = useState({})
 
   const { setAuth } = useAuth();
-  
-  console.log(auth)
-  console.log(cargando)
+
+  const navigate = useNavigate()
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -30,6 +29,7 @@ export const Login = () => {
       setAlerta({})
       localStorage.setItem('token', data.token)
       setAuth(data)
+      navigate('/proyectos')
     } catch (error) {
       setAlerta({
         msg: error.response.data.msg,
